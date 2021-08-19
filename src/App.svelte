@@ -34,6 +34,7 @@
 				{#each streams as stream}
 					<button on:click={selectStream} value={stream.key}>{stream.label}</button>
 				{/each}
+				<button on:click={() => { currentItemIdx += 1; }}>Skip</button>
 			</div>
 		{:else}
 			<div>All done!</div>
