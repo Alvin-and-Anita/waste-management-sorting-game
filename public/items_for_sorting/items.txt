@@ -1,0 +1,6 @@
+hot_paper_cup.jpg landfill
+compostable_bag.jpg compostable
+plastic_forks.jpg MGPC
+plastic_lid.jpg MGPC
+plates.jpg compostable
+styrofoam_cups.jpg landfill
