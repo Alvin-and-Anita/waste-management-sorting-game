@@ -5,7 +5,7 @@
 		{ label: 'Compostable', key: 'compostable' },
 		{ label: 'Paper/Cardboard', key: 'paper' },
 		{ label: 'Metal, Glass, Plastic or Carton', key: 'mgpc' },
-		{ label: 'Landfill', key: 'landfill' },
+		{ label: 'Landfillz', key: 'landfill' },
 	];
 	let items = [
 		{ path: 'items_for_sorting/photos/hot_paper_cup.jpg', stream: 'landfill' }, 
