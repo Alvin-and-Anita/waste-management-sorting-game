@@ -42,24 +42,32 @@
         />
       </div>
       <div id="streams-buttons">
-        <button class="compostable" on:click={selectStream} value="compostable">
-          Compostable
-        </button>
-        <button class="paper" on:click={selectStream} value="paper"
-          >Paper/Cardboard</button
-        >
-        <button class="mgpc" on:click={selectStream} value="mgpc">
-          Metal, Glass, Plastic or Carton
-        </button>
-        <button class="landfill" on:click={selectStream} value="landfill"
-          >Landfill</button
-        >
-        <button
-          class="skip"
-          on:click={() => {
-            currentItemIdx += 1;
-          }}>Skip</button
-        >
+        <div>
+          <button
+            class="compostable"
+            on:click={selectStream}
+            value="compostable"
+          >
+            Compostable
+          </button>
+          <button class="paper" on:click={selectStream} value="paper"
+            >Paper/Cardboard</button
+          >
+          <button class="mgpc" on:click={selectStream} value="mgpc">
+            Metal, Glass, Plastic or Carton
+          </button>
+          <button class="landfill" on:click={selectStream} value="landfill"
+            >Landfill</button
+          >
+        </div>
+        <div>
+          <button
+            class="skip"
+            on:click={() => {
+              currentItemIdx += 1;
+            }}>Skip</button
+          >
+        </div>
       </div>
     {:else}
       <div>All done!</div>
