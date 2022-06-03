@@ -30,7 +30,12 @@
 
 <main>
   <div id="header" class="unselectable title">
-    <h1>Waste Management Trainer</h1>
+    <h1>Resource Management Trainer</h1>
+  </div>
+  <div>
+    <p>We live in a world where we have finite resources. That is why as we go through life, we need to take responsibility on what we consume and discard. Test your knowledge on what to do with things you don't want anymore! Much of our "waste" is actually resources that can be used again if managed properly and given a new life.</p>
+    <p>For each pictured item, click on the button below for the stream that you think it should go into. The score will let you know if you got it right. If you don't know, you can click the "skip" button.</p> 
+    <p>Happy sorting!</p>
   </div>
   <div id="content">
     {#if currentItemIdx < items.length}
