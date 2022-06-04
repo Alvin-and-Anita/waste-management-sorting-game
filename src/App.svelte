@@ -2,20 +2,22 @@
   export let score: number;
   export let num_skipped: number;
   let streams = [
-    { label: "Compostable", key: "compostable" },
+    { label: "Donate", key: "donate" },
+    { label: "Compost", key: "compost" },
     { label: "Paper/Cardboard", key: "paper" },
     { label: "Metal, Glass, Plastic or Carton", key: "mgpc" },
+    { label: "Special Recycling", key: "special" },
     { label: "Landfill", key: "landfill" },
   ];
   let items = [
     { path: "items_for_sorting/photos/hot_paper_cup.jpg", stream: "landfill" },
     {
       path: "items_for_sorting/photos/compostable_bag.jpg",
-      stream: "compostable",
+      stream: "compost",
     },
     { path: "items_for_sorting/photos/plastic_forks.jpg", stream: "mgpc" },
     { path: "items_for_sorting/photos/plastic_lid.jpg", stream: "mgpc" },
-    { path: "items_for_sorting/photos/plates.jpg", stream: "compostable" },
+    { path: "items_for_sorting/photos/plates.jpg", stream: "compost" },
     { path: "items_for_sorting/photos/styrofoam_cups.jpg", stream: "landfill" },
   ];
   let currentItemIdx = 0;
@@ -43,12 +45,11 @@
       </div>
       <div id="streams-buttons">
         <div>
-          <button
-            class="compostable"
-            on:click={selectStream}
-            value="compostable"
-          >
-            Compostable
+          <button class="donate" on:click={selectStream} value="donate">
+            Donate
+          </button>
+          <button class="compost" on:click={selectStream} value="compost">
+            Compost
           </button>
           <button class="paper" on:click={selectStream} value="paper"
             >Paper/Cardboard</button
@@ -56,9 +57,12 @@
           <button class="mgpc" on:click={selectStream} value="mgpc">
             Metal, Glass, Plastic or Carton
           </button>
+          <button class="special" on:click={selectStream} value="special">
+            Special Recyling
+          </button>
           <button class="landfill" on:click={selectStream} value="landfill"
-            >Landfill</button
-          >
+            >Landfill
+          </button>
         </div>
         <div>
           <button
@@ -74,7 +78,7 @@
     {/if}
   </div>
   <div id="footer">
-    <div>Score: {score}/{items.length}</div>
+    <div class="score">Score: {score}/{items.length}</div>
   </div>
 </main>
 
@@ -107,7 +111,11 @@
     color: white;
   }
 
-  #streams-buttons button.compostable {
+  #streams-buttons button.donate {
+    background-color: rgb(64, 19, 78);
+  }
+
+  #streams-buttons button.compost {
     background-color: rgb(219, 148, 16);
   }
 
@@ -123,7 +131,15 @@
     background-color: rgb(108, 127, 138);
   }
 
+  #streams-buttons button.special {
+    background-color: rgb(163, 160, 0);
+  }
+
   #streams-buttons button.skip {
     background-color: rgb(255, 59, 59);
+  }
+
+  div.score {
+    font-size: 3em;
   }
 </style>
