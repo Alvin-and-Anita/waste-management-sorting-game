@@ -10,15 +10,30 @@
     { label: "Landfill", key: "landfill" },
   ];
   let items = [
-    { path: "items_for_sorting/photos/hot_paper_cup.jpg", stream: "landfill" },
+    { path: "items_for_sorting/photos/books.jpeg", stream: "donate" },
     {
-      path: "items_for_sorting/photos/compostable_bag.jpg",
+      path: "items_for_sorting/photos/cardboard_box.jpeg",
+      stream: "paper",
+    },
+    {
+      path: "items_for_sorting/photos/compostable_bag.jpeg",
       stream: "compost",
     },
-    { path: "items_for_sorting/photos/plastic_forks.jpg", stream: "mgpc" },
-    { path: "items_for_sorting/photos/plastic_lid.jpg", stream: "mgpc" },
-    { path: "items_for_sorting/photos/plates.jpg", stream: "compost" },
-    { path: "items_for_sorting/photos/styrofoam_cups.jpg", stream: "landfill" },
+    { path: "items_for_sorting/photos/eaten_apple.jpeg", stream: "compost" },
+    { path: "items_for_sorting/photos/envelope.jpeg", stream: "paper" },
+    { path: "items_for_sorting/photos/glass_bottle.jpeg", stream: "mgpc" },
+    { path: "items_for_sorting/photos/laptop.jpeg", stream: "special" },
+    { path: "items_for_sorting/photos/metal_can.jpeg", stream: "mgpc" },
+    { path: "items_for_sorting/photos/milk_carton.jpeg", stream: "mgpc" },
+    { path: "items_for_sorting/photos/plastic_bottle.jpeg", stream: "mgpc" },
+    {
+      path: "items_for_sorting/photos/plastic_utensils.jpeg",
+      stream: "mgpc",
+    },
+    { path: "items_for_sorting/photos/refrigerator.jpeg", stream: "special" },
+    { path: "items_for_sorting/photos/snack_bag.jpeg", stream: "landfill" },
+    { path: "items_for_sorting/photos/styrofoam.jpeg", stream: "landfill" },
+    { path: "items_for_sorting/photos/toys.jpeg", stream: "donate" },
   ];
   let currentItemIdx = 0;
 
@@ -35,8 +50,18 @@
     <h1>Resource Management Trainer</h1>
   </div>
   <div>
-    <p>We live in a world where we have finite resources. That is why as we go through life, we need to take responsibility on what we consume and discard. Test your knowledge on what to do with things you don't want anymore! Much of our "waste" is actually resources that can be used again if managed properly and given a new life.</p>
-    <p>For each pictured item, click on the button below for the stream that you think it should go into. The score will let you know if you got it right. If you don't know, you can click the "skip" button.</p> 
+    <p>
+      We live in a world where we have finite resources. That is why as we go
+      through life, we need to take responsibility on what we consume and
+      discard. Test your knowledge on what to do with things you don't want
+      anymore! Much of our "waste" is actually resources that can be used again
+      if managed properly and given a new life.
+    </p>
+    <p>
+      For each pictured item, click on the button below for the stream that you
+      think it should go into. The score will let you know if you got it right.
+      If you don't know, you can click the "skip" button.
+    </p>
     <p>Happy sorting!</p>
   </div>
   <div id="content">
