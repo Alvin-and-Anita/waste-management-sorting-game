@@ -49,23 +49,21 @@
   <div id="header" class="unselectable title">
     <h1>Resource Management Trainer</h1>
   </div>
-  <div>
-    <p>
-      We live in a world where we have finite resources. That is why as we go
-      through life, we need to take responsibility on what we consume and
-      discard. Test your knowledge on what to do with things you don't want
-      anymore! Much of our "waste" is actually resources that can be used again
-      if managed properly and given a new life.
-    </p>
-    <p>
-      For each pictured item, click on the button below for the stream that you
-      think it should go into. The score will let you know if you got it right.
-      If you don't know, you can click the "skip" button.
-    </p>
-    <p>Happy sorting!</p>
-  </div>
   <div id="content">
     {#if currentItemIdx < items.length}
+      <p>
+        We live in a world where we have finite resources. That is why as we go
+        through life, we need to take responsibility on what we consume and
+        discard. Test your knowledge on what to do with things you don't want
+        anymore! Much of our "waste" is actually resources that can be used
+        again if managed properly and given a new life.
+      </p>
+      <p>
+        For each pictured item, click on the button below for the stream that
+        you think it should go into. The score will let you know if you got it
+        right. If you don't know, you can click the "skip" button.
+      </p>
+      <p>Happy sorting!</p>
       <div>
         <img
           id="waste-item-photo"
@@ -73,7 +71,7 @@
           alt="FIXME"
         />
       </div>
-      <div id="streams-buttons">
+      <div class="streams-buttons">
         <div>
           <button class="donate" on:click={selectStream} value="donate">
             Donate
@@ -104,7 +102,64 @@
         </div>
       </div>
     {:else}
-      <div>All done!</div>
+      <div>
+        {#if score == 0 || score == 1 || score == 2 || score == 3 || score == 4}
+          "You have much room to grow. Here are some great resources to get you
+          started on your journey to become an eco-star!"
+        {/if}
+        {#if score == 5 || score == 6 || score == 7 || score == 8 || score == 9}
+          "Can be a little tricky but you are on your way to becoming an
+          eco-star!"
+        {/if}
+        {#if score == 10 || score == 11 || score == 12 || score == 13 || score == 14}
+          "Great job, you got most of them correct. Check out these resources to
+          help you become an eco-star!"
+        {/if}
+        {#if score == 15}
+          "You're a eco-superstar resource manager!"
+        {/if}
+        <p>FUN FACTS!</p>
+      </div>
+      <div class="streams-buttons">
+        <div>
+          <button class="donate" {selectStream} value="donate">
+            Donate: "One person's trash is another person's treasure." All
+            usable items should be donated so it can be used by someone else.</button
+          >
+        </div>
+        <div>
+          <button class="compost" {selectStream} value="compost">
+            Compost: About a third of our waste can be turned into compost,
+            nature's way of recycling, which is a natural nutritious soil
+            amendment.</button
+          >
+        </div>
+        <div>
+          <button class="paper" {selectStream} value="paper"
+            >Paper/Cardboard: If you can rip it, you can recycle it, make sure
+            it is "clean" before you recycle it.</button
+          >
+        </div>
+        <div>
+          <button class="mgpc" {selectStream} value="mgpc">
+            Metal, Glass, Plastic or Carton: All metal, glass botles and jars,
+            rigid plastics, and cartons can be recycled. Make sure they are
+            clean before recycling.</button
+          >
+        </div>
+        <div>
+          <button class="special" {selectStream} value="special">
+            Special Recyling: Electronics and Hazardous materials need to be
+            sent to special recycling facilities.</button
+          >
+        </div>
+        <div>
+          <button class="landfill" {selectStream} value="landfill"
+            >Landfill: This should always be the last resort! Anything that
+            can't be donated, composted, or recycled goes here.</button
+          >
+        </div>
+      </div>
     {/if}
   </div>
   <div id="footer">
@@ -137,35 +192,35 @@
     }
   }
 
-  #streams-buttons button {
+  .streams-buttons button {
     color: white;
   }
 
-  #streams-buttons button.donate {
+  .streams-buttons button.donate {
     background-color: rgb(64, 19, 78);
   }
 
-  #streams-buttons button.compost {
+  .streams-buttons button.compost {
     background-color: rgb(219, 148, 16);
   }
 
-  #streams-buttons button.paper {
+  .streams-buttons button.paper {
     background-color: green;
   }
 
-  #streams-buttons button.mgpc {
+  .streams-buttons button.mgpc {
     background-color: rgb(45, 112, 156);
   }
 
-  #streams-buttons button.landfill {
+  .streams-buttons button.landfill {
     background-color: rgb(108, 127, 138);
   }
 
-  #streams-buttons button.special {
+  .streams-buttons button.special {
     background-color: rgb(163, 160, 0);
   }
 
-  #streams-buttons button.skip {
+  .streams-buttons button.skip {
     background-color: rgb(255, 59, 59);
   }
 
