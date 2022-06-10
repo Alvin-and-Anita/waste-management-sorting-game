@@ -1,45 +1,55 @@
 <script lang="ts">
   export let score: number;
   export let num_skipped: number;
-  let streams = [
-    { label: "Donate", key: "donate" },
-    { label: "Compost", key: "compost" },
-    { label: "Paper/Cardboard", key: "paper" },
-    { label: "Metal, Glass, Plastic or Carton", key: "mgpc" },
-    { label: "Special Recycling", key: "special" },
-    { label: "Landfill", key: "landfill" },
-  ];
+
   let items = [
-    { path: "items_for_sorting/photos/books.jpeg", stream: "donate" },
+    {
+      path: "items_for_sorting/photos/books.jpeg",
+      stream: ["donate", "paper"],
+    },
     {
       path: "items_for_sorting/photos/cardboard_box.jpeg",
-      stream: "paper",
+      stream: ["paper", "compost"],
     },
     {
       path: "items_for_sorting/photos/compostable_bag.jpeg",
-      stream: "compost",
+      stream: ["compost"],
     },
-    { path: "items_for_sorting/photos/eaten_apple.jpeg", stream: "compost" },
-    { path: "items_for_sorting/photos/envelope.jpeg", stream: "paper" },
-    { path: "items_for_sorting/photos/glass_bottle.jpeg", stream: "mgpc" },
-    { path: "items_for_sorting/photos/laptop.jpeg", stream: "special" },
-    { path: "items_for_sorting/photos/metal_can.jpeg", stream: "mgpc" },
-    { path: "items_for_sorting/photos/milk_carton.jpeg", stream: "mgpc" },
-    { path: "items_for_sorting/photos/plastic_bottle.jpeg", stream: "mgpc" },
+    { path: "items_for_sorting/photos/eaten_apple.jpeg", stream: ["compost"] },
+    { path: "items_for_sorting/photos/envelope.jpeg", stream: ["paper"] },
+    { path: "items_for_sorting/photos/glass_bottle.jpeg", stream: ["mgpc"] },
+    {
+      path: "items_for_sorting/photos/laptop.jpeg",
+      stream: ["special", "donate"],
+    },
+    {
+      path: "items_for_sorting/photos/metal_can.jpeg",
+      stream: ["mgpc", "donate"],
+    },
+    { path: "items_for_sorting/photos/milk_carton.jpeg", stream: ["mgpc"] },
+    { path: "items_for_sorting/photos/plastic_bottle.jpeg", stream: ["mgpc"] },
     {
       path: "items_for_sorting/photos/plastic_utensils.jpeg",
-      stream: "mgpc",
+      stream: ["mgpc", "donate", "compost"],
     },
-    { path: "items_for_sorting/photos/refrigerator.jpeg", stream: "special" },
-    { path: "items_for_sorting/photos/snack_bag.jpeg", stream: "landfill" },
-    { path: "items_for_sorting/photos/styrofoam.jpeg", stream: "landfill" },
-    { path: "items_for_sorting/photos/toys.jpeg", stream: "donate" },
+    {
+      path: "items_for_sorting/photos/refrigerator.jpeg",
+      stream: ["special", "donate"],
+    },
+    { path: "items_for_sorting/photos/snack_bag.jpeg", stream: ["landfill"] },
+    { path: "items_for_sorting/photos/styrofoam.jpeg", stream: ["landfill"] },
+    {
+      path: "items_for_sorting/photos/toys.jpeg",
+      stream: ["donate", "mgpc"],
+    },
   ];
   let currentItemIdx = 0;
 
   function selectStream(event) {
-    if (items[currentItemIdx].stream == event.target.value) {
-      score += 1;
+    for (let i = 0; i < items[currentItemIdx].stream.length; i++) {
+      if (items[currentItemIdx].stream[i] == event.target.value) {
+        score += 1;
+      }
     }
     currentItemIdx += 1;
   }
@@ -122,39 +132,39 @@
       </div>
       <div class="streams-buttons">
         <div>
-          <button class="donate" {selectStream} value="donate">
+          <button class="donate" value="donate">
             Donate: "One person's trash is another person's treasure." All
             usable items should be donated so it can be used by someone else.</button
           >
         </div>
         <div>
-          <button class="compost" {selectStream} value="compost">
+          <button class="compost" value="compost">
             Compost: About a third of our waste can be turned into compost,
             nature's way of recycling, which is a natural nutritious soil
             amendment.</button
           >
         </div>
         <div>
-          <button class="paper" {selectStream} value="paper"
+          <button class="paper" value="paper"
             >Paper/Cardboard: If you can rip it, you can recycle it, make sure
             it is "clean" before you recycle it.</button
           >
         </div>
         <div>
-          <button class="mgpc" {selectStream} value="mgpc">
+          <button class="mgpc" value="mgpc">
             Metal, Glass, Plastic or Carton: All metal, glass botles and jars,
             rigid plastics, and cartons can be recycled. Make sure they are
             clean before recycling.</button
           >
         </div>
         <div>
-          <button class="special" {selectStream} value="special">
+          <button class="special" value="special">
             Special Recyling: Electronics and Hazardous materials need to be
             sent to special recycling facilities.</button
           >
         </div>
         <div>
-          <button class="landfill" {selectStream} value="landfill"
+          <button class="landfill" value="landfill"
             >Landfill: This should always be the last resort! Anything that
             can't be donated, composted, or recycled goes here.</button
           >
