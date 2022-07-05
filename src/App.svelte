@@ -128,46 +128,51 @@
         {#if score == 15}
           "You're a eco-superstar resource manager!"
         {/if}
-        <p>FUN FACTS!</p>
       </div>
-      <div class="streams-buttons">
-        <div>
-          <button class="donate" value="donate">
-            Donate: "One person's trash is another person's treasure." All
-            usable items should be donated so it can be used by someone else.</button
-          >
+      <div>
+        <p>FUN FACTS!</p>
+        <div class="streams-buttons">
+          <div>
+            <button class="donate" value="donate">
+              DONATE: "One person's trash is another person's treasure." All
+              usable items should be donated so it can be used by someone else. Giving items another life is a great way to avoid sending more waste to landfill and incinerators.</button
+            >
+          </div>
+          <div>
+            <button class="compost" value="compost">
+              COMPOST: All food scraps, yard debris, and certified compostable items should be composted whenever possible. About a third of our waste can be turned into compost,
+              nature's way of recycling, which is a natural nutritious soil
+              amendment.</button
+            >
+          </div>
+          <div>
+            <button class="paper" value="paper"
+              >PAPER, CARDBOARD: If you can rip it, you can recycle it, make sure
+              it is "clean" before you recycle it.</button
+            >
+          </div>
+          <div>
+            <button class="mgpc" value="mgpc">
+              METAL, GLASS, PLASTIC, CARTON: All metal, glass botles and jars,
+              rigid plastics, and cartons can be recycled. Make sure they are
+              clean before recycling.</button
+            >
+          </div>
+          <div>
+            <button class="special" value="special">
+              SPECIAL RECYCLING: Electronics and Hazardous materials need to be
+              sent to special recycling facilities. This includes electronics that contain batteries, not ones that plug into an outlet. Hazadous materials include any items that contain toxic chemicals such as paints, gasoline, etc.</button
+            >
+          </div>
+          <div>
+            <button class="landfill" value="landfill"
+              >LANDFILL: This should always be the last resort! Anything that
+              can't be donated, composted, or recycled goes here. Common items: soft plastics, styrofoam.</button
+            >
+          </div>
         </div>
         <div>
-          <button class="compost" value="compost">
-            Compost: About a third of our waste can be turned into compost,
-            nature's way of recycling, which is a natural nutritious soil
-            amendment.</button
-          >
-        </div>
-        <div>
-          <button class="paper" value="paper"
-            >Paper/Cardboard: If you can rip it, you can recycle it, make sure
-            it is "clean" before you recycle it.</button
-          >
-        </div>
-        <div>
-          <button class="mgpc" value="mgpc">
-            Metal, Glass, Plastic or Carton: All metal, glass botles and jars,
-            rigid plastics, and cartons can be recycled. Make sure they are
-            clean before recycling.</button
-          >
-        </div>
-        <div>
-          <button class="special" value="special">
-            Special Recyling: Electronics and Hazardous materials need to be
-            sent to special recycling facilities.</button
-          >
-        </div>
-        <div>
-          <button class="landfill" value="landfill"
-            >Landfill: This should always be the last resort! Anything that
-            can't be donated, composted, or recycled goes here.</button
-          >
+          <p>Every municipality has different rules and practices when it comes to waste management. That is why it is important to check with your local municipality first. This project was created based on New York City's Department of Sanitation recycling rules.</p>
         </div>
       </div>
     {/if}
