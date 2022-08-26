@@ -69,9 +69,9 @@
         again if managed properly and given a new life.
       </p>
       <p>
-        For each pictured item, click on the button below for the stream that
+        For each pictured item, click on the button for the stream that
         you think it should go into. The score will let you know if you got it
-        right. If you don't know, you can click the "skip" button.
+        right. If you don't know, you can click the "Skip" button.
       </p>
       <p>Happy sorting!</p>
       <div>
@@ -118,7 +118,7 @@
           started on your journey to become an eco-star!"
         {/if}
         {#if score == 5 || score == 6 || score == 7 || score == 8 || score == 9}
-          "Can be a little tricky but you are on your way to becoming an
+          "This can be a little tricky but you are on your way to becoming an
           eco-star!"
         {/if}
         {#if score == 10 || score == 11 || score == 12 || score == 13 || score == 14}
@@ -126,7 +126,7 @@
           help you become an eco-star!"
         {/if}
         {#if score == 15}
-          "You're a eco-superstar resource manager!"
+          "You're an eco-superstar resource manager!"
         {/if}
       </div>
       <div>
